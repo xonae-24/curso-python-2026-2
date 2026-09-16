@@ -1,0 +1,24 @@
+pares = 0
+impares = 0
+mayores = 0
+
+for numero in range(1, 11):
+    print("\ntabla del", numero)
+
+    for multiplicador in range(1, 11):
+        resultado = numero * multiplicador
+
+        print(numero, "x", multiplicador, "=", resultado)
+
+        if resultado % 2 == 0:
+            pares += 1
+        else:
+            impares += 1
+
+        if resultado > 50:
+            mayores += 1
+
+print("\nresultados finales")
+print("resultados pares:", pares)
+print("resultados impares:", impares)
+print("resultados mayores que 50:", mayores)

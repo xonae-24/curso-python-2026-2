@@ -1,0 +1,41 @@
+cantidadproductos = int(input("ingrese la cantidad de productos: "))
+
+totalantes = 0
+totaldescuentos = 0
+
+for i in range(cantidadproductos):
+
+    print("\nproducto", i + 1)
+
+    nombre = input("ingrese el nombre: ")
+    precio = float(input("ingrese el precio: "))
+    cantidad = int(input("ingrese la cantidad: "))
+    tipo = input("ingrese el tipo (alimento, aseo u otro): ")
+
+    subtotal = precio * cantidad
+    descuento = 0
+
+    if tipo == "alimento":
+        descuento = subtotal * 0.05
+
+    elif tipo == "aseo" and cantidad >= 3:
+        descuento = subtotal * 0.10
+
+    totalantes += subtotal
+    totaldescuentos += descuento
+
+    print("subtotal:", subtotal)
+    print("descuento aplicado:", descuento)
+
+if totalantes > 300000:
+    descuentogeneral = totalantes * 0.05
+    totaldescuentos += descuentogeneral
+else:
+    descuentogeneral = 0
+
+totaldefinitivo = totalantes - totaldescuentos
+
+print("\ntotal antes del descuento general:", totalantes)
+print("total de descuentos:", totaldescuentos)
+print("descuento general:", descuentogeneral)
+print("total definitivo:", totaldefinitivo)
